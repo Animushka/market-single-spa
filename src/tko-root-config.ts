@@ -8,4 +8,6 @@ registerApplication<LifeCycles>(
 );
 
 // Start Single SPA
-start();
+start({
+  urlRerouteOnly: true,
+});

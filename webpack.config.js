@@ -10,6 +10,7 @@ module.exports = (webpackConfigEnv, argv) => {
     webpackConfigEnv,
     argv,
     disableHtmlGeneration: true,
+    externals: ["single-spa", "vue", "vue-router", "quasar", /^@tko\/.+/],
   });
 
   return merge(defaultConfig, {
