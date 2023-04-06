@@ -1,20 +1,11 @@
-import { registerApplication, start } from "single-spa";
-import {
-  constructApplications,
-  constructRoutes,
-  constructLayoutEngine,
-} from "single-spa-layout";
-import microfrontendLayout from "./microfrontend-layout.html";
+import { registerApplication, start, LifeCycles } from "single-spa";
 
-const routes = constructRoutes(microfrontendLayout);
-const applications = constructApplications({
-  routes,
-  loadApp({ name }) {
-    return System.import(name);
-  },
-});
-const layoutEngine = constructLayoutEngine({ routes, applications });
+// Register the market-nav microfrontend with Single SPA
+registerApplication<LifeCycles>(
+  "@tko/market-nav",
+  () => System.import<LifeCycles>("@tko/market-nav"),
+  (location) => location.pathname.startsWith("/")
+);
 
-applications.forEach(registerApplication);
-layoutEngine.activate();
+// Start Single SPA
 start();
