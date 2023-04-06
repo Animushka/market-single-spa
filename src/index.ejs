@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Root Config</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons" rel="stylesheet" type="text/css">
+  <link href="https://cdn.jsdelivr.net/npm/quasar@2.11.10/dist/quasar.prod.css" rel="stylesheet" type="text/css">
 
   <!--
     Remove this if you only support browsers that support async/await.
@@ -34,11 +36,16 @@
   <script type="systemjs-importmap">
     {
       "imports": {
-        "single-spa": "https://cdn.jsdelivr.net/npm/single-spa@5.9.0/lib/system/single-spa.min.js"
+        "single-spa": "https://cdn.jsdelivr.net/npm/single-spa@5.9.0/lib/system/single-spa.min.js",
+         "@tko/root-config": "//localhost:9000/tko-root-config.js",
+        "@tko/market-nav": "http://localhost:8093/js/app.js"
+
       }
     }
   </script>
   <link rel="preload" href="https://cdn.jsdelivr.net/npm/single-spa@5.9.0/lib/system/single-spa.min.js" as="script">
+  <script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.prod.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/quasar@2.11.10/dist/quasar.umd.prod.js"></script>
 
   <!-- Add your organization's prod import map URL to this script's src  -->
   <!-- <script type="systemjs-importmap" src="/importmap.json"></script> -->
@@ -48,7 +55,8 @@
     {
       "imports": {
         "@single-spa/welcome": "https://unpkg.com/single-spa-welcome/dist/single-spa-welcome.js",
-        "@tko/root-config": "//localhost:9000/tko-root-config.js"
+        "@tko/root-config": "//localhost:9000/tko-root-config.js",
+        "@tko/market-nav": "http://localhost:8093/js/app.js"
       }
     }
   </script>
