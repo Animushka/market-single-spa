@@ -1,4 +1,4 @@
-import { registerApplication, start, LifeCycles } from "single-spa";
+import { registerApplication, start, LifeCycles, addErrorHandler } from "single-spa";
 
 // Register the market-nav microfrontend with Single SPA
 registerApplication<LifeCycles>(
@@ -9,5 +9,19 @@ registerApplication<LifeCycles>(
 
 // Start Single SPA
 start({
-  urlRerouteOnly: true,
+  urlRerouteOnly: true
+});
+
+window.addEventListener("single-spa:first-mount", () => {
+  registerApplication<LifeCycles>(
+    "@tko/market-products",
+    () => System.import<LifeCycles>("@tko/market-products"),
+    (location) => location.pathname.startsWith("/product")
+  );
+});
+
+addErrorHandler((error) => {
+  alert("Service not available now. Try again later");
+  // eslint-disable-next-line no-console
+  console.log(error);
 });
