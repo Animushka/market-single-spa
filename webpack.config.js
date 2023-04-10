@@ -10,11 +10,11 @@ module.exports = (webpackConfigEnv, argv) => {
     webpackConfigEnv,
     argv,
     disableHtmlGeneration: true,
-    externals: ["single-spa", "vue", "vue-router", "quasar", /^@tko\/.+/],
   });
 
   return merge(defaultConfig, {
     // modify the webpack config however you'd like to by adding to this object
+    externals: ["@tko/market-boba"],
     plugins: [
       new HtmlWebpackPlugin({
         inject: false,

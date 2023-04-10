@@ -5,13 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Market Micro Frontend</title>
-<!--  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons" rel="stylesheet" type="text/css">-->
-<!--  <link href="https://cdn.jsdelivr.net/npm/quasar@2.11.10/dist/quasar.prod.css" rel="stylesheet" type="text/css">-->
-<!--  <link href="https://cdn.jsdelivr.net/npm/vue-router@4.0.11/dist/vue-router.global.prod.js">-->
+  <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/2838/2838895.png">
+  <!-- Regenerator Runtime -->
   <script src="https://cdn.jsdelivr.net/npm/regenerator-runtime@0.13.7/runtime.min.js"></script>
-<!--  <script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.prod.js"></script>-->
 
-
+  <!-- SystemJS and import map -->
   <script type="systemjs-importmap">
     {
       "imports": {
@@ -19,7 +17,8 @@
         "@tko/root-config": "//localhost:9000/tko-root-config.js",
         "@tko/market-nav": "http://localhost:8093/js/app.js",
         "@tko/market-products": "http://localhost:8094/js/app.js",
-        "@tko/market-login": "http://localhost:8095/js/app.js"
+        "@tko/market-login": "http://localhost:8095/js/app.js",
+        "@tko/market-boba": "http://localhost:8080/tko-market-boba.js"
       }
     }
   </script>
@@ -28,6 +27,10 @@
   <script src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/extras/amd.min.js"></script>
 </head>
 <body>
+  <div id="single-spa-application:@tko/market-nav"></div>
+  <div id="single-spa-application:@tko/market-products" style="padding: 48px"></div>
+  <div id="single-spa-application:@tko/market-login"></div>
+<!-- Start the application -->
 <script>
   System.import('@tko/root-config');
 </script>
