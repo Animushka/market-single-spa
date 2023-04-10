@@ -5,7 +5,7 @@ export interface AppInfo {
   path: string;
 }
 
-export class Microfrontend {
+export class AppRegistrar {
   constructor(private appInfo: AppInfo) {}
 
   async loadWithFallback(

@@ -1,6 +1,6 @@
 // tko-root-config.ts
-import { apps } from "./appConfig";
-import { AppManager } from "./AppManager";
+import { apps } from "./app-config";
+import { AppManager } from "./app-manager";
 
 (async () => {
   const appManager = new AppManager(apps);

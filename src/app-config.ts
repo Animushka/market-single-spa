@@ -1,5 +1,5 @@
 // appConfig.ts
-import { AppInfo } from "./Microfrontend";
+import { AppInfo } from "./app-registrar";
 
 export const apps: AppInfo[] = [
   {

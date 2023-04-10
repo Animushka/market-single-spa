@@ -1,6 +1,6 @@
 // AppManager.ts
 import { start, addErrorHandler } from "single-spa";
-import { AppInfo, Microfrontend } from "./Microfrontend";
+import { AppInfo, AppRegistrar } from "./app-registrar";
 
 export class AppManager {
   constructor(private apps: AppInfo[]) {}
@@ -12,8 +12,8 @@ export class AppManager {
 
   async registerAll(): Promise<void> {
     for (const appInfo of this.apps) {
-      const microfrontend = new Microfrontend(appInfo);
-      await microfrontend.register();
+      const appRegistrar = new AppRegistrar(appInfo);
+      await appRegistrar.register();
     }
   }
 
