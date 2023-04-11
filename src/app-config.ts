@@ -14,4 +14,8 @@ export const apps: AppInfo[] = [
     name: "@tko/market-login",
     path: "/login",
   },
+  {
+    name: "@tko/market-order",
+    path: "/order",
+  },
 ];
